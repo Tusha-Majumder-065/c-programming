@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, rev = 0, arr[20];
+
+    printf("Enter number: ");
+    scanf("%d", &n);
+
+    int temp = n;
+    int size = 0;
+
+    // Store digits in array
+    while (temp > 0) {
+        arr[size] = temp % 10;
+        temp = temp / 10;
+        size++;
+    }
+
+    // Reverse using array
+    for (i = 0; i < size; i++) {
+        rev = rev * 10 + arr[i];
+    }
+
+    // Check palindrome
+    if (n == rev)
+        printf("Palindrome number");
+    else
+        printf("Not a palindrome");
+
+    return 0;
+}
